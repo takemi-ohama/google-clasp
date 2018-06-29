@@ -1,8 +1,8 @@
-From ubuntu:bionic
+FROM ubuntu:bionic
 
 LABEL maintainer="takemi.ohama@gmail.com"
 
-RUN apt-get upgrade -y && apt-get update && apt-get install -y apt-utils
+RUN apt-get update && apt-get install -y apt-utils
 RUN apt-get install -y vim wget curl tzdata git ca-certificates sudo 
 RUN apt-get install -y locales language-pack-ja-base language-pack-ja 
 RUN apt-get install -y nodejs npm 
@@ -23,7 +23,7 @@ RUN sed -i -e "s/# ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/" /etc/locale.gen
 RUN locale-gen
 RUN update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
 
-#dockerユーザ作成と
+#dockerユーザ作成
 RUN useradd -m -s /bin/bash docker && \
     usermod -G users docker && \
     usermod -G users root && \
