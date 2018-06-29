@@ -2,6 +2,7 @@ FROM ubuntu:bionic
 
 LABEL maintainer="takemi.ohama@gmail.com"
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y apt-utils
 RUN apt-get install -y vim wget curl tzdata git ca-certificates sudo 
 RUN apt-get install -y locales language-pack-ja-base language-pack-ja 
