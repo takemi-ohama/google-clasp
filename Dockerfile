@@ -33,5 +33,6 @@ RUN useradd -m -s /bin/bash docker && \
 
 USER docker
 WORKDIR /opt
+ENV LANG=ja_JP.UTF-8
 
 CMD ["tail","-f","/dev/null"]
