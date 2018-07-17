@@ -15,6 +15,7 @@ RUN n latest
 RUN apt-get purge -y nodejs npm
 RUN npm install --no-progress -g typings typescript
 RUN npm install --no-progress -g @google/clasp
+RUN npm install --no-progress -g create-react-app loopback-cli 
 
 #aptインストール完了
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
